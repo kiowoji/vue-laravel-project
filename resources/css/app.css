@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --main-color: #e45826;
+    --red: #f03d29;
+    --orange: #f39c12;
+    --light-color: #888;
+    --light-bg: #eee;
+    --black: #4e0300;
+    --white: #fefefe;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+.dark {
+    --light-color: #aaa;
+    --light-bg: #333;
+    --black: #fefefe;
+    --white: #222;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.2);
+    padding: 0;
+}
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: var(--main-color);
+    color: #fefefe;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+    height: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+body {
+    background-color: var(--light-bg);
+}
+
+.dark-bg {
+    background-color: #333;
+}
+
+.active-aside-body {
+    padding-left: 0;
+}
+
+section {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: auto;
+}
+
+.wide-view {
+    margin-left: -30rem;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#main-section {
+    padding: 0;
+    padding-left: 30rem;
+    min-height: 100vh;
+}
+.heading {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 2rem;
+    border-bottom: var(--border);
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn {
+    border-radius: 0.8rem;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn {
+    display: inline-block;
+}
+
+.btn,
+.inline-btn {
+    background-color: var(--main-color);
+}
+
+.option-btn,
+.inline-option-btn {
+    background-color: var(--orange);
+}
+
+.delete-btn,
+.inline-delete-btn {
+    background-color: var(--red);
+}
+
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover,
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.flex-btn {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.courses .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.thumb span {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 50%;
+    }
+
+    .wide-view {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about .row {
+        flex-wrap: wrap;
+    }
+    .about .content {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-section {
+        padding-left: 0;
+    }
+
+    .wide-view {
+        margin-left: 0;
+    }
+
+    .side-bar #close-btn {
+        display: block;
+    }
+    .contact .row {
+        flex-direction: column;
+    }
+    .contact .image {
+        max-width: 70%;
+    }
+    .login-form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+
+    .flex-btn {
+        gap: 0;
+        flex-flow: column;
+    }
+
+    .home-grid .box-container {
+        grid-template-columns: 1fr;
+    }
+    iframe {
+        height: 200px;
+    }
+    .search-form {
+        width: 100%;
+    }
+}
